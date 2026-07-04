@@ -1,18 +1,17 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Forgot from "./components/Forgot";
 
 function App() {
-  const [page, setPage] = useState("login");
-  
   return (
     <div className="container">
-      {page === "login" && <Login setPage={setPage} />}
-
-      {page === "signup" && <Signup setPage={setPage} />}
-
-      {page === "forgot" && <Forgot setPage={setPage} />}
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot" element={<Forgot />} />
+      </Routes>
     </div>
   );
 }

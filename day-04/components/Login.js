@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login({ setPage }) {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -9,7 +10,9 @@ function Login({ setPage }) {
     password: "",
   });
 
-  const [showPassword, setshowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -44,6 +47,7 @@ function Login({ setPage }) {
 
     // Login Success
     alert("Login Successful!");
+    navigate("/login");
 
     console.log("Email:", email);
     console.log("Password:", password);
@@ -81,7 +85,7 @@ function Login({ setPage }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="button" onClick={() => setshowPassword(!showPassword)}>
+        <button type="button" onClick={() => setShowPassword(!showPassword)}>
           {showPassword ? "Hide" : "Show"}
         </button>
         {errors.password && <p className="error">{errors.password}</p>}
@@ -91,11 +95,11 @@ function Login({ setPage }) {
 
       <p className="bottom-text">
         Don't have an account?{" "}
-        <span onClick={() => setPage("signup")}>Sign Up</span>
+        <span onClick={() => navigate("/signup")}>Sign Up</span>
       </p>
 
       <p className="bottom-text">
-        <span onClick={() => setPage("forgot")}>Forgot Password?</span>
+        <span onClick={() => navigate("/forgot")}>Forgot Password?</span>
       </p>
     </div>
   );
