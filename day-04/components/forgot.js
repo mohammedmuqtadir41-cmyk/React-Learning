@@ -13,40 +13,52 @@ function Forgot() {
     setError("");
 
     if (!email) {
-      setError("Please enter your Email");
+      setError("Please enter your email.");
       return;
     }
 
-    if (!email.includes("@")) {
-      setError("Please enter a valid Email");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
       return;
     }
 
-    alert("Password reset link sent successfully");
-
+    // Later this will send a reset email or verify the user
     setEmail("");
-
-    navigate("/");
+    navigate("/reset");
   };
 
   return (
     <div className="card">
       <h1>Forgot Password</h1>
-      <p className="subtitle">Enter your email to reset your password.</p>
+
+      <p className="subtitle">
+        Enter your registered email to reset your password.
+      </p>
+
       <form className="form" onSubmit={handleSubmit}>
         <label>Email</label>
+
         <input
           type="email"
           placeholder="john@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        {error && <p className="error"> {error}</p>}
-        <button type="submit">Send Reset Link</button>
+
+        {error && <p className="error">{error}</p>}
+
+        <button type="submit">
+          Send Reset Link
+        </button>
       </form>
 
       <p className="bottom-text">
-        <span onClick={() => navigate("/")}>Back to Login</span>
+        Remember your password?{" "}
+        <span onClick={() => navigate("/")}>
+          Back to Login
+        </span>
       </p>
     </div>
   );

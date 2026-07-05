@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .container {
@@ -117,4 +117,74 @@ body {
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 12px;
+}
+
+.password-box {
+  position: relative;
+  width: 100%;
+}
+
+.password-box input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: gray;
+  font-size: 18px;
+}
+
+.eye:hover {
+  color: #6a11cb;
+}
+
+.password-rules {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.password-rules p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.valid {
+  color: #22c55e;
+  font-weight: 500;
+}
+
+.invalid {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.password-box {
+  position: relative;
+  width: 100%;
+}
+
+.password-box input {
+  width: 100%;
+  padding-right: 45px;
+  box-sizing: border-box;
+}
+
+.eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+}
+
+.eye:hover {
+  color: #6a11cb;
 }
