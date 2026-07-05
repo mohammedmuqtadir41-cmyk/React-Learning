@@ -107,7 +107,7 @@ This project is being built to strengthen my understanding of:
 
 ## 📌 Author
 
-**Ahmed**
+**Mohammed Muqthadir Ahmed**
 
 Engineering Student | React Developer (Learning) 🚀
 
