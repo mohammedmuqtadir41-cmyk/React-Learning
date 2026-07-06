@@ -24,7 +24,6 @@ function Forgot() {
       return;
     }
 
-    // Later this will send a reset email or verify the user
     setEmail("");
     navigate("/reset");
   };

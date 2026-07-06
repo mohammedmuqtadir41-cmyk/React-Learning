@@ -63,12 +63,9 @@ function Login() {
     <div className="card">
       <h1>Welcome Back</h1>
 
-      <p className="subtitle">
-        Login to your account
-      </p>
+      <p className="subtitle">Login to your account</p>
 
       <form className="form" onSubmit={handleLogin}>
-
         <label>Email</label>
 
         <input
@@ -78,9 +75,7 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        {errors.email && (
-          <p className="error">{errors.email}</p>
-        )}
+        {errors.email && <p className="error">{errors.email}</p>}
 
         <label>Password</label>
 
@@ -92,35 +87,23 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <span
-            className="eye"
-            onClick={() => setShowPassword(!showPassword)}
-          >
+          <span className="eye" onClick={() => setShowPassword(!showPassword)}>
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </span>
         </div>
 
-        {errors.password && (
-          <p className="error">{errors.password}</p>
-        )}
+        {errors.password && <p className="error">{errors.password}</p>}
 
-        <button type="submit">
-          Login
-        </button>
-
+        <button type="submit">Login</button>
       </form>
 
       <p className="bottom-text">
         Don't have an account?{" "}
-        <span onClick={() => navigate("/signup")}>
-          Sign Up
-        </span>
+        <span onClick={() => navigate("/signup")}>Sign Up</span>
       </p>
 
       <p className="bottom-text">
-        <span onClick={() => navigate("/forgot")}>
-          Forgot Password?
-        </span>
+        <span onClick={() => navigate("/forgot")}>Forgot Password?</span>
       </p>
     </div>
   );

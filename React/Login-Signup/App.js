@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-import Forgot from "./components/forgot";
-import Reset from "./components/reset";
+import Forgot from "./components/Forgot";
+import Reset from "./components/Reset";
 
 function App() {
   return (
@@ -19,3 +19,10 @@ function App() {
 }
 
 export default App;
+// import Login from "./components/Login";
+
+// function App() {
+//   return <Login />;
+// }
+
+// export default App;
