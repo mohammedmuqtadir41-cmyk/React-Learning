@@ -1,4 +1,4 @@
-import topImages from "../mockData/topImg";
+import {topImages} from "../mockData/topImg";
 
 const Top = () => {
   return (

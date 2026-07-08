@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-import resArr from "../mockData/reslist";
+import {resArr} from "../mockData/reslist";
 
 
 const Body = () => {

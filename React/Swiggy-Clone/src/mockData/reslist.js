@@ -1,4 +1,4 @@
-const resArr = [
+export const resArr = [
   {
     id: "40377",
     resName: "Lucky Restaurant",
@@ -217,4 +217,4 @@ const resArr = [
 
 ];
 
-export default resArr;
+// export default resArr;

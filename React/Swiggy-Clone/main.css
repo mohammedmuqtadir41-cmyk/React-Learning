@@ -124,7 +124,7 @@ body {
 
 .res-rating {
   margin-top: 10px;
-  color: green;
+  color: rgb(184, 233, 9);
   font-weight: bold;
 }
 
@@ -160,6 +160,9 @@ footer {
     scrollbar-width:none;
 }
 
+.top-images:hover{
+  transform:translateY(-2px) scale(1.01);
+}
 .food-item{
     min-width:140px;
     text-align:center;

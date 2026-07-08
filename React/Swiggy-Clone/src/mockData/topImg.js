@@ -1,8 +1,8 @@
-const topImages = [
+export const  topImages = [
     {
         id : 1,
         name : "Biryani",
-        image : "https://media.istockphoto.com/id/1410130688/photo/mutton-biryani-served-in-a-golden-dish-isolated-on-dark-background-side-view-indian-food.webp?a=1&b=1&s=612x612&w=0&k=20&c=dgx9Uk9HkGNK3aNMp4OJgKHyV67Jmt0Eg2lJ7t8dOJg=",
+        image : "https://ik.imagekit.io/4re875mmd/images_q=tbn:ANd9GcTAGb4GlhonJ7KfUeJ_xEd2nEx9BJwmtQVeXysB-9weBg&s=10"
     },
      {
         id : 2,
@@ -36,4 +36,4 @@ const topImages = [
     }
 ]
 
-export default topImages;
+// export default topImages;
