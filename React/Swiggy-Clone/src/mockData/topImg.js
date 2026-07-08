@@ -33,6 +33,27 @@ export const  topImages = [
         id : 7,
         name : "Desserts",
         image : "https://media.istockphoto.com/id/1398738894/photo/shahi-tukda-or-shahi-toast-also-known-as-double-ka-meetha-is-a-rich-indian-dessert-made-with.webp?a=1&b=1&s=612x612&w=0&k=20&c=XnPfgp6Afinumq1ziHPRRktekmevr30KMduxgZaHEF0=",
+    },
+    {
+        id: 8,
+        name: "Ice Cream",
+        image: "https://images.unsplash.com/photo-1635491231222-8e524584da52?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGNob2NvbGF0ZSUyMGljZSUyMGNyZWFtfGVufDB8fDB8fHww",
+    },
+    {
+        id: 9,
+        name: "Noodles",
+        image: "https://plus.unsplash.com/premium_photo-1694670234085-4f38b261ce5b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bm9vZGxlc3xlbnwwfHwwfHx8MA%3D%3D",
+
+    },
+    {
+        id: 10,
+        name: "Waffle",
+        image: "https://images.unsplash.com/photo-1562513872-634b8fae6dbe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2FmZmxlfGVufDB8fDB8fHww",
+    },
+    {
+        id: 11,
+        name: "Momos",
+        image: "https://plus.unsplash.com/premium_photo-1661600630493-a1dad6b9519b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG1vbW9zfGVufDB8fDB8fHww",
     }
 ]
 
