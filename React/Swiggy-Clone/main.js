@@ -20,10 +20,10 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      {/* <Top />   */}
-      <TopShimmer />
-      <Shimmer />
-      {/* <Body /> */}
+      <Top />  
+      
+      
+      <Body />
       <Footer />
     </div>
   );
