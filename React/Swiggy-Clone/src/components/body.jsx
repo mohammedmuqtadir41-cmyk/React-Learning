@@ -29,7 +29,7 @@ const Body = () => {
     console.log("hotel list", hotelList);
   };
 
-  if (hotelList == null) {
+  if (hotelList == 0) {
     return <Shimmer />;
   }
 
@@ -49,7 +49,7 @@ const Body = () => {
         ))} */}
         {hotelList.map((resObj) => {
           return (
-            <RestaurantCard resDetail={resObj?.info} key={resObj?.info?.id} />
+            <RestaurantCard hotelData={resObj?.info} key={resObj?.info?.id} />
           );
         })}
       </div>

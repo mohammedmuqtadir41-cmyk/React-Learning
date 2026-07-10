@@ -1,3 +1,5 @@
+import { imgBaseURL } from "../mockData/constants";
+
 const RestaurantCard = ({ hotelData }) => {
   const {
     // resName,
@@ -12,14 +14,14 @@ const RestaurantCard = ({ hotelData }) => {
     // location,
     cloudinaryImageId,
     areaName,
-  } = resDetail;
+  } = hotelData;
 
   return (
     <div className="res-card">
       <div className="res-img-container">
         <img
           className="res-logo"
-          alt={resName}
+          alt={name}
           // src={
           //   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
           //   imgId
@@ -36,12 +38,12 @@ const RestaurantCard = ({ hotelData }) => {
       <h3 className="res-title">{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
 
-      <h4 className="res-rating">
-        ⭐ {avgRating} Stars
-      </h4>
+      <h4 className="res-rating">⭐ {avgRating} Stars</h4>
 
       {/* <h4>{deliveryTime} mins</h4> */}
-      <h4>{sla.deliveryTime} mins | {costForTwo}</h4>
+      <h4>
+        {sla.deliveryTime} mins | {costForTwo}
+      </h4>
 
       {/* <h4>{costForTwo}</h4> */}
 
