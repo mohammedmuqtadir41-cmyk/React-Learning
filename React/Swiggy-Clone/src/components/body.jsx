@@ -29,7 +29,7 @@ const Body = () => {
     console.log("hotel list", hotelList);
   };
 
-  if (hotelList == 0) {
+if (hotelList == 0) {
     return <Shimmer />;
   }
 
