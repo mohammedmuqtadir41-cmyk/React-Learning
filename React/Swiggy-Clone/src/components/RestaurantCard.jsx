@@ -1,6 +1,7 @@
 import { imgBaseURL } from "../mockData/constants";
 
 const RestaurantCard = ({ hotelData }) => {
+
   const {
     // resName,
     // cuisine,
@@ -18,6 +19,7 @@ const RestaurantCard = ({ hotelData }) => {
 
   return (
     <div className="res-card">
+
       <div className="res-img-container">
         <img
           className="res-logo"
