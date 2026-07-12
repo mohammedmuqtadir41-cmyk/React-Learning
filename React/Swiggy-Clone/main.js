@@ -8,20 +8,22 @@ import Footer from "./src/components/Footer";
 import { Shimmer } from "./src/components/RestaurantSkeleton";
 import { TopShimmer } from "./src/components/TopSkeleton";
 import React, { useState } from "react";
+import { RouterProvider } from "react-router-dom";
+import appRouter  from "./src/utils/Approuter";
 
 const App = () => {
   const [searchText, setSearchText] = useState("");
 console.log("App:", searchText);
   return (
     <div className="container">
-      <Header searchText={searchText} setSearchText={setSearchText} />
-      <Top />
-      <Body searchText={searchText} />
-      <Footer />
+    <Header/>
+    <Outlet/>
+    <Footer />
+      
     </div>
   );
 };
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 
-root.render(<App />);
+root.render(<RouterProvider router={appRouter} />);

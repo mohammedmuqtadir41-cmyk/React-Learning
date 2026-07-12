@@ -3,7 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { Shimmer } from "./RestaurantSkeleton";
 import { useEffect, useState } from "react";
 
-const Body = ({ searchText }) => {
+const Body = ({ searchText = "" }) => {
   const [hotelList, setHotelList] = useState([]);
   const [filteredHotelList, setFilteredHotelList] = useState([]);
 
@@ -56,7 +56,7 @@ const Body = ({ searchText }) => {
       <div className="filter-container">
         <button onClick={topRated}>⭐Top Rated Restaurants</button>
         <button onClick={showAllRestaurants}>🍽️ All Restaurants</button>
-        <button onClick={sortByRating}>Sort by Rating</button>
+        <button onClick={sortByRating}>🔃Sort by Rating</button>
       </div>
       <div className="res-container">
         {filteredHotelList.map((resObj) => (
