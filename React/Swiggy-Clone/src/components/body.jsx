@@ -2,6 +2,7 @@ import { swiggyURL } from "../mockData/constants";
 import RestaurantCard from "./RestaurantCard";
 import { Shimmer } from "./RestaurantSkeleton";
 import { useEffect, useState } from "react";
+import Top from "./Top";
 
 const Body = ({ searchText = "" }) => {
   const [hotelList, setHotelList] = useState([]);
@@ -28,7 +29,7 @@ const Body = ({ searchText = "" }) => {
         ?.restaurants || [];
 
     setHotelList(restaurants);
-    setFilteredHotelList(hotelList);
+    setFilteredHotelList(restaurants);
   };
 
   if (hotelList.length === 0) {
@@ -53,6 +54,7 @@ const Body = ({ searchText = "" }) => {
 
   return (
     <div className="body">
+      <Top />
       <div className="filter-container">
         <button onClick={topRated}>⭐Top Rated Restaurants</button>
         <button onClick={showAllRestaurants}>🍽️ All Restaurants</button>

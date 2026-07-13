@@ -1,3 +1,6 @@
+/* ==========================================
+   1. GLOBAL STYLES & RESET
+   ========================================== */
 * {
   margin: 0;
   padding: 0;
@@ -5,96 +8,165 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background-color: #f6f7fb;
+  color: #282c3f;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ==========================================
+   2. HEADER & NAVIGATION (LOGO FIXED & ENLARGED)
+   ========================================== */
 .header {
-  height: 80px;
+  height: 85px; /* Increased slightly to accommodate a larger logo comfortably */
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 #logo img {
-  width: 100px;
-  height: 85px;
+  width: 70px;  /* Enlarged from your previous size for better visibility */
+  height: 70px; /* Kept perfectly square before rounding so it stays a true circle */
   object-fit: cover;
   border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds a crisp edge to the logo */
+  transition: transform 0.2s ease-in-out;
+}
+
+#logo img:hover {
+  transform: scale(1.05); /* Clean micro-interaction on hover */
 }
 
 #search-bar {
   flex: 1;
   display: flex;
   justify-content: center;
-  margin: 0 50px;
+  margin: 0 40px;
+  max-width: 500px;
 }
 
 #search-bar input {
-  width: 450px;
-  max-width: 100%;
-  padding: 12px 18px;
-  border: 1px solid #ddd;
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #e2e8f0;
   border-radius: 30px;
   outline: none;
   font-size: 15px;
-  transition: 0.3s;
+  color: #3d3d3d;
+  background-color: #f9fafb;
+  transition: all 0.3s ease;
 }
 
 #search-bar input:focus {
+  background-color: #ffffff;
   border-color: #fc8019;
-  box-shadow: 0 0 8px rgba(252, 128, 25, 0.3);
+  box-shadow: 0 0 0 4px rgba(252, 128, 25, 0.15);
 }
 
+/* Navigation System Fixes */
 .nav-items ul {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 35px;
+  gap: 12px;
 }
 
-.nav-items li {
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+.nav-items a {
+  display: block;
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
 }
 
-.nav-items li:hover {
+.nav-items a:hover {
   color: #fc8019;
+  background-color: rgba(252, 128, 25, 0.08);
 }
 
+.nav-items a.active {
+  background-color: #fc8019;
+  color: #ffffff;
+}
 
+/* ==========================================
+   3. FILTERS & MAIN CONTAINER
+   ========================================== */
 .body {
-  padding: 35px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 40px;
 }
 
+.filter-container {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0 25px 0;
+  flex-wrap: wrap;
+}
 
+.filter-container button {
+  background: #ffffff;
+  color: #494949;
+  border: 1px solid #d4d5d9;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  transition: all 0.2s ease;
+}
+
+.filter-container button:hover {
+  background: #fc8019;
+  color: #ffffff;
+  border-color: #fc8019;
+}
+
+.filter-container button:active {
+  transform: scale(0.96);
+}
+
+/* ==========================================
+   4. RESTAURANT CARDS
+   ========================================== */
 .res-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  justify-content: flex-start;
+  gap: 32px;
+  margin-top: 10px;
 }
 
-
 .res-card {
-  width: 270px;
-  background-color: white;
-  border-radius: 15px;
+  width: 280px;
+  background-color: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
 .res-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
 .res-logo {
@@ -105,63 +177,75 @@ body {
 
 .res-card h3,
 .res-card h4 {
-  padding: 0 15px;
+  padding: 0 16px;
 }
 
 .res-title {
-  margin-top: 15px;
-  font-size: 20px;
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #282c3f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .res-cuisine {
-  margin-top: 8px;
-  color: #666;
+  margin-top: 6px;
+  color: #686b78;
   font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .res-rating {
-  margin-top: 10px;
-  color: rgb(184, 233, 9);
-  font-weight: bold;
-}
-
-.res-address {
-  margin-top: 10px;
-  margin-bottom: 18px;
-  color: #777;
+  margin-top: 8px;
+  color: #48c479; /* Premium Green rating color */
+  font-weight: 700;
   font-size: 14px;
 }
 
-footer {
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #222;
-  color: white;
-  text-align: center;
+.res-address {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  color: #93959f;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* ==========================================
+   5. TOP CAROUSEL & ITEMS
+   ========================================== */
 .top-container {
-  width: 80%;
-  margin: auto;
-  margin-top: 30px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .top-container h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #282c3f;
   margin-bottom: 20px;
 }
 
 .top-images {
   display: flex;
   overflow-x: auto;
-  gap: 20px;
+  gap: 24px;
+  padding-bottom: 10px;
   scrollbar-width: none;
 }
 
-.top-images:hover {
-  transform: translateY(-2px) scale(1.01);
+.top-images::-webkit-scrollbar {
+  display: none;
 }
+
 .food-item {
-  min-width: 140px;
+  min-width: 130px;
   text-align: center;
 }
 
@@ -171,183 +255,221 @@ footer {
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
+.food-item img:hover {
+  transform: scale(1.06);
+}
+
+/* ==========================================
+   6. SHIMMER EFFECT / LOADING STATES
+   ========================================== */
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  justify-content: flex-start;
+  gap: 32px;
 }
 
 .shimmer-card {
-  width: 270px;
-  background-color: white;
-  border-radius: 15px;
+  width: 280px;
+  background-color: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-  padding-bottom: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  padding-bottom: 16px;
+}
+
+.shimmer-img, .shimmer-title, .shimmer-cuisine, .shimmer-rating, .shimmer-deliveryTime, .topShimmer-p, .topShimmer-item {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
 }
 
 .shimmer-img {
   height: 180px;
   width: 100%;
-  /* border-radius: 12px; */
-  /* background-color: rgb(170, 170, 170); */
-  background: linear-gradient(
-    90deg,
-    #e0e0e0 25%,
-    #f5f5f5 50%,
-    #e0e0e0 75%
-  ) ;
-  background-size: 200% 100%;
-  animation: shimmer 1.2s linear infinite;
 }
+
 .shimmer-title {
   width: 70%;
   height: 18px;
-  margin-top: 10px;
-  /* background-color: rgb(210, 210, 210); */
-  border-radius: 5px;
-  background: linear-gradient(
-    90deg,
-    #e0e0e0 25%,
-    #f5f5f5 50%,
-    #e0e0e0 75%
-  ) ;
-  background-size: 200% 100%;
-  animation: shimmer 1.2s linear infinite;
+  margin: 14px 16px 0 16px;
+  border-radius: 4px;
 }
 
 .shimmer-cuisine {
-  margin-top: 8px;
-  height: 14px;
-  /* margin: 15px; */
-  /* background-color: rgb(210, 210, 210); */
+  margin: 8px 16px 0 16px;
   width: 85%;
-  border-radius: 5px;
-  background: linear-gradient(
-    90deg,
-    #e0e0e0 25%,
-    #f5f5f5 50%,
-    #e0e0e0 75%
-  ) ;
-  background-size: 200% 100%;
-  animation: shimmer 1.2s linear infinite;
+  height: 14px;
+  border-radius: 4px;
 }
 
 .shimmer-rating {
-  margin-top: 8px;
-  /* margin: 0 10px; */
-  height: 14px;
-  /* background-color: rgb(210, 210, 210); */
+  margin: 8px 16px 0 16px;
   width: 45%;
-  border-radius: 5px;
-  background: linear-gradient(
-    90deg,
-    #e0e0e0 25%,
-    #f5f5f5 50%,
-    #e0e0e0 75%
-  ) ;
-  background-size: 200% 100%;
-  animation: shimmer 1.2s linear infinite;
+  height: 14px;
+  border-radius: 4px;
 }
 
 .shimmer-deliveryTime {
-  margin-top: 8px;
-  /* margin:0 15px; */
-  /* background-color: rgb(210, 210, 210); */
+  margin: 8px 16px 0 16px;
   width: 60%;
   height: 14px;
-  border-radius: 5px;
-  background: linear-gradient(
-    90deg,
-    #e0e0e0 25%,
-    #f5f5f5 50%,
-    #e0e0e0 75%
-  ) ;
-  background-size: 200% 100%;
-  animation: shimmer 1.2s linear infinite;
+  border-radius: 4px;
 }
 
 .topShimmer-container {
-  width: 80%;
-  margin: 30px auto;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
-.topShimmer-p{
-  margin-top: 1px;
-  height: 25px;
-  width: 220px;
+.topShimmer-p {
+  height: 28px;
+  width: 240px;
   border-radius: 6px;
-  margin-bottom: 25px;
-  background: linear-gradient(
-    90deg,
-    #e0e0e0 25%,
-    #f5f5f5 50%,
-    #e0e0e0 75%
-  ) ;
-  background-size: 200% 100%;
-  animation: shimmer 1.2s linear infinite;
+  margin-bottom: 20px;
 }
 
 .topShimmer-images {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   overflow-x: auto;
   scrollbar-width: none;
 }
+
 .topShimmer-item {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-   background: linear-gradient(
-    90deg,
-    #e0e0e0 25%,
-    #f5f5f5 50%,
-    #e0e0e0 75%
-  ) ;
-  background-size: 200% 100%;
-  animation: shimmer 1.5s linear infinite;
   flex-shrink: 0;
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
 
-  100% {
-    background-position: 200% 0;
-  }
-} 
+/* ==========================================
+   7. FOOTER
+   ========================================== */
+.footer {
+  background: #0f0f12;
+  color: #ffffff;
+  margin-top: 80px;
+}
 
-.filter-container {
+.footer-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 60px 40px;
   display: flex;
-  gap: 12px;
-  padding: 20px;
+  justify-content: space-between;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
-.filter-container button {
-  background: white;
-  color: #444;
-  border: 1px solid #d4d5d9;
-  padding: 10px 18px;
-  border-radius: 30px;
-  cursor: pointer;
+.footer-brand {
+  flex: 2;
+  min-width: 280px;
+}
+
+.footer-brand h2 {
+  color: #fc8019;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.footer-brand p {
+  color: #a9abb3;
+  line-height: 1.7;
+  max-width: 360px;
   font-size: 14px;
-  font-weight: 600;
-  transition: all 0.25s ease;
 }
 
-.filter-container button:hover {
-  background: #fc8019;
-  color: white;
-  border-color: #fc8019;
+.footer-links,
+.footer-contact {
+  flex: 1;
+  min-width: 160px;
 }
 
-.filter-container button:active {
-  transform: scale(0.96);
+.footer-links h4,
+.footer-contact h4 {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+  cursor: pointer;
+  color: #a9abb3;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-links li:hover {
+  color: #fc8019;
+}
+
+.footer-contact p {
+  margin-bottom: 12px;
+  color: #a9abb3;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #22252e;
+  text-align: center;
+  padding: 24px;
+  color: #7e808c;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   8. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================== */
+@media (max-width: 1024px) {
+  .res-container, .shimmer-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #search-bar {
+    margin: 0;
+    width: 100%;
+  }
+
+  .body {
+    padding: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

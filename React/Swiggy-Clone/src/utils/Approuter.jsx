@@ -1,40 +1,19 @@
-import { createBrowserRouter } from "react-router-dom";
-import Body from "../components/Body";
-import About from "../pages/About";
-import Cart from "../pages/Cart";
-import Help from "../pages/Help";
-import Offers from "../pages/Offers";
-import SignIn from "../pages/SignIn";
-import Error from "../pages/Error";
+import { Outlet } from "react-router";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Top from "../components/Top";
+import { useState } from "react";
 
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Body />,
-    errorElement: <Error />,
-    children: [
-      {
-        path: "offers",
-        element: <Offers />,
-      },
-      {
-        path: "help",
-        element: <Help />,
-      },
-      {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "signin",
-        element: <SignIn />,
-      },
-      {
-        path: "cart",
-        element: <Cart />,
-      },
-    ],
-  },
-]);
+const App = () => {
+  const [searchText, setSearchText] = useState("");
+  return (
+    <div>
+      <Header searchText={searchText} setSearchText={setSearchText} />
+      {/* <Top /> */}
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
 
-export default appRouter;
+export default App;

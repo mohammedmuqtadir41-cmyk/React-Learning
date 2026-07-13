@@ -4,12 +4,18 @@ const Help = () => {
   return (
     <div className="page">
       <div className="page-card">
-        <h1>💬 Help Center</h1>
+        <h1>Help Center</h1>
 
         <p>
-          Need assistance with your order? Our support team is
-          available to help you with payments, deliveries,
-          refunds, and account-related queries.
+          We're here to help. Find assistance with orders, payments,
+          deliveries, refunds, account management, and other common
+          questions related to your Food Stack experience.
+        </p>
+
+        <p>
+          If you're experiencing an issue, our support resources are
+          designed to help you quickly resolve your concerns and get
+          back to enjoying your favorite meals.
         </p>
 
         <button>Contact Support</button>

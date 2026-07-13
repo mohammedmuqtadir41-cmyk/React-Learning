@@ -3,43 +3,86 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f8f8f8;
-  padding: 40px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #fffaf5 0%, #f6f7fb 100%);
 }
 
 .page-card {
-  width: 700px;
-  background: white;
-  padding: 45px;
-  border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  width: 100%;
+  max-width: 760px;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 22px;
+  border: 1px solid #ececec;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.page-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.12),
+    0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .page-card h1 {
-  font-size: 42px;
+  font-size: 2.6rem;
+  font-weight: 700;
   color: #fc8019;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .page-card p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 18px;
 }
 
 .page-card button {
-  margin-top: 30px;
-  padding: 12px 24px;
+  margin-top: 18px;
+  padding: 14px 30px;
   background: #fc8019;
-  color: white;
+  color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 16px;
-  transition: .3s;
+  transition: all 0.3s ease;
 }
 
 .page-card button:hover {
-  background: #e46d0b;
+  background: #e66f0b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(252, 128, 25, 0.3);
+}
+
+.page-card button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 24px 16px;
+  }
+
+  .page-card {
+    padding: 35px 24px;
+  }
+
+  .page-card h1 {
+    font-size: 2rem;
+  }
+
+  .page-card p {
+    font-size: 1rem;
+  }
+
+  .page-card button {
+    width: 100%;
+  }
 }

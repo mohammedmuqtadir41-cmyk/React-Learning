@@ -4,14 +4,21 @@ const Offers = () => {
   return (
     <div className="page">
       <div className="page-card">
-        <h1>🎁 Exclusive Offers</h1>
+        <h1>Exclusive Offers</h1>
 
         <p>
-          Discover the latest deals, discounts, and limited-time offers from
-          your favorite restaurants.
+          Save more on every order with exciting deals, seasonal
+          discounts, and exclusive restaurant offers available for a
+          limited time.
         </p>
 
-        <button>View Deals</button>
+        <p>
+          Browse the latest promotions, discover special savings from
+          your favorite restaurants, and enjoy delicious meals at the
+          best prices.
+        </p>
+
+        <button>Explore Offers</button>
       </div>
     </div>
   );

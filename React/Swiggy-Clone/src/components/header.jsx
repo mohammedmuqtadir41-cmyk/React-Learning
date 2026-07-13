@@ -1,13 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router";
+import { LogoURL } from "../mockData/constants";
 
-const Header = ({searchText,setSearchText}) => {
+const Header = ({ searchText, setSearchText }) => {
   return (
     <header className="header">
       <div id="logo">
-        <img
-          src="https://ik.imagekit.io/pfq9vdvnxo/beauty-chef-woman-restaurant-logo-4d15fa32-15ce-4e52-9573-d4dcd73ddc4c.jpg"
-          alt="Logo"
-        />
+        <img src={LogoURL} />
       </div>
 
       <div id="search-bar">
@@ -18,15 +17,33 @@ const Header = ({searchText,setSearchText}) => {
           placeholder="Search for restaurants, cuisines..."
         />
       </div>
-          
-      
+
       <div className="nav-items">
         <ul>
-          <li>Offers</li>
-          <li>Help</li>
-          <li>Sign in</li>
-          <li>About</li>
-          <li>Cart</li>
+          <li>
+            {" "}
+            <Link to={"/"}>Home</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to={"/offers"}>Offers</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to={"/help"}>Help</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to={"/signin"}>Sign in</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to={"/about"}>About</Link>
+          </li>
+          <li>
+            {" "}
+            <Link to={"/cart"}>Cart</Link>
+          </li>
         </ul>
       </div>
     </header>
