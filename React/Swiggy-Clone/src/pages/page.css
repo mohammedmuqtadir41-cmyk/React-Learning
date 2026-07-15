@@ -20,8 +20,14 @@
 }
 
 @keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Reusable Section Headers */
@@ -95,8 +101,12 @@
   z-index: 5;
   border: 1px solid #eef2f6;
 }
-.coupon-cutout.left { left: -8px; }
-.coupon-cutout.right { right: -8px; }
+.coupon-cutout.left {
+  left: -8px;
+}
+.coupon-cutout.right {
+  right: -8px;
+}
 
 .coupon-body {
   padding: 24px;
@@ -110,8 +120,12 @@
   margin-bottom: 6px;
 }
 
-.coupon-card.primary .deal-badge { color: #fc8019; }
-.coupon-card.bank .deal-badge { color: #1a73e8; }
+.coupon-card.primary .deal-badge {
+  color: #fc8019;
+}
+.coupon-card.bank .deal-badge {
+  color: #1a73e8;
+}
 
 .deal-desc {
   font-size: 13px;
@@ -131,7 +145,7 @@
 }
 
 .code-box {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: 700;
   font-size: 14px;
   color: #334155;
@@ -147,7 +161,9 @@
   text-transform: uppercase;
 }
 
-.btn-copy:hover { color: #e46d0b; }
+.btn-copy:hover {
+  color: #e46d0b;
+}
 
 /* Mid-page Banners */
 .promo-banner {
@@ -162,8 +178,15 @@
   gap: 20px;
 }
 
-.banner-text h3 { font-size: 20px; margin-bottom: 6px; font-weight: 700; }
-.banner-text p { color: #94a3b8; font-size: 14px; }
+.banner-text h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.banner-text p {
+  color: #94a3b8;
+  font-size: 14px;
+}
 
 .btn-action {
   background-color: #fc8019;
@@ -175,7 +198,9 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-.btn-action:hover { background-color: #e46d0b; }
+.btn-action:hover {
+  background-color: #e46d0b;
+}
 
 /* ==========================================
    3. SECURE AUTH SYSTEM ENTITY (SIGN IN)
@@ -204,8 +229,17 @@
   margin-bottom: 16px;
 }
 
-.auth-header h2 { font-size: 24px; font-weight: 800; color: #1e222f; margin-bottom: 8px; }
-.auth-header p { color: #686b78; font-size: 14px; line-height: 1.5; }
+.auth-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1e222f;
+  margin-bottom: 8px;
+}
+.auth-header p {
+  color: #686b78;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
 .auth-form .form-group {
   display: flex;
@@ -214,7 +248,11 @@
   margin-bottom: 20px;
 }
 
-.auth-form label { font-size: 13px; font-weight: 700; color: #334155; }
+.auth-form label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+}
 
 .auth-form input {
   padding: 14px 16px;
@@ -246,7 +284,9 @@
   transition: all 0.2s;
 }
 
-.btn-submit-auth:hover { background-color: #e46d0b; }
+.btn-submit-auth:hover {
+  background-color: #e46d0b;
+}
 
 .form-divider {
   text-align: center;
@@ -298,16 +338,29 @@
   transition: background 0.2s;
 }
 
-.btn-oauth:hover { background-color: #f8fafc; border-color: #94a3b8; }
+.btn-oauth:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
 
 .auth-footer {
   margin-top: 28px;
   text-align: center;
 }
 
-.auth-footer p { font-size: 11px; color: #94a3b8; line-height: 1.5; }
-.auth-footer a { color: #fc8019; text-decoration: none; font-weight: 600; }
-.auth-footer a:hover { text-decoration: underline; }
+.auth-footer p {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+.auth-footer a {
+  color: #fc8019;
+  text-decoration: none;
+  font-weight: 600;
+}
+.auth-footer a:hover {
+  text-decoration: underline;
+}
 
 /* ==========================================
    4. INTERACTIVE SUPPORT DESK (HELP PAGE)
@@ -380,8 +433,17 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
-.sidebar-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
-.sidebar-card p { font-size: 13px; color: #686b78; line-height: 1.5; margin-bottom: 24px; }
+.sidebar-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.sidebar-card p {
+  font-size: 13px;
+  color: #686b78;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
 
 .support-channels {
   display: flex;
@@ -403,8 +465,16 @@
   border-radius: 10px;
 }
 
-.channel h4 { font-size: 14px; font-weight: 700; color: #1e222f; }
-.channel p { font-size: 12px; color: #94a3b8; margin: 0; }
+.channel h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e222f;
+}
+.channel p {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+}
 
 .btn-chat-now {
   width: 100%;
@@ -419,7 +489,9 @@
   transition: background 0.2s;
 }
 
-.btn-chat-now:hover { background: #11141d; }
+.btn-chat-now:hover {
+  background: #11141d;
+}
 
 /* ==========================================
    5. COMPREHENSIVE RESPONSIVE BREAKPOINTS
@@ -432,12 +504,29 @@
 }
 
 @media (max-width: 640px) {
-  .page-hero h1 { font-size: 1.85rem; }
-  .page-hero p { font-size: 0.95rem; }
-  .promo-banner { text-align: center; justify-content: center; padding: 24px; }
-  .btn-action { width: 100%; }
-  .auth-container { padding: 24px 16px; border: none; background: transparent; box-shadow: none; }
-  .form-divider span { background-color: #f6f7fb; }
+  .page-hero h1 {
+    font-size: 1.85rem;
+  }
+  .page-hero p {
+    font-size: 0.95rem;
+  }
+  .promo-banner {
+    text-align: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .btn-action {
+    width: 100%;
+  }
+  .auth-container {
+    padding: 24px 16px;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+  .form-divider span {
+    background-color: #f6f7fb;
+  }
 }
 
 /* Custom variables for brand cohesion */
@@ -459,7 +548,9 @@
 .cart-page-container {
   min-height: 100vh;
   background-color: var(--bg-light);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   color: var(--text-dark);
   padding: 40px 20px;
   display: flex;
@@ -554,10 +645,18 @@
   border-radius: 50%;
   position: absolute;
 }
-.veg-nonveg-icon.veg { border-color: var(--success-green); }
-.veg-nonveg-icon.veg::before { background-color: var(--success-green); }
-.veg-nonveg-icon.non-veg { border-color: var(--danger-red); }
-.veg-nonveg-icon.non-veg::before { background-color: var(--danger-red); }
+.veg-nonveg-icon.veg {
+  border-color: var(--success-green);
+}
+.veg-nonveg-icon.veg::before {
+  background-color: var(--success-green);
+}
+.veg-nonveg-icon.non-veg {
+  border-color: var(--danger-red);
+}
+.veg-nonveg-icon.non-veg::before {
+  background-color: var(--danger-red);
+}
 
 /* Compact Quantity Incrementer */
 .quantity-controller {
@@ -690,7 +789,7 @@
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .cart-sidebar {
     width: 100%;
     position: static;
@@ -702,7 +801,8 @@
 .about-page-container {
   min-height: 100vh;
   background-color: var(--bg-light);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text-dark);
 }
 
@@ -811,7 +911,9 @@
   padding: 40px 30px;
   border-radius: 12px;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   border: 1px solid transparent;
 }
 
@@ -844,7 +946,7 @@
   .about-hero h1 {
     font-size: 30px;
   }
-  
+
   .about-hero p {
     font-size: 15px;
   }
@@ -880,7 +982,8 @@
   position: relative;
   min-height: 100vh;
   background-color: #12141c; /* Deep rich dark theme so glow effects pop beautifully */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1059,13 +1162,28 @@
   .error-card {
     padding: 24px;
   }
-  
+
   .error-card__actions {
     flex-direction: column;
   }
-  
+
   .error-card__status-row {
     flex-direction: column;
     gap: 4px;
   }
+}
+
+/* .menu-name{
+  padding: 20px;
+} */
+.rest-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-img {
+  height: 300px;
+  width: 450px;
+  border-radius: 20px;
 }

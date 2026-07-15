@@ -1,6 +1,8 @@
 import react, { useEffect, useState } from "react";
 import { MenuAPI } from "../mockData/constants";
 import { useParams } from "react-router";
+import RestaurantInfo from "./RestaurantInfo";
+import MenuCategory from "./MenuCategory";
 
 const RestaurantPage = () => {
   const { resId } = useParams();
@@ -12,18 +14,48 @@ const RestaurantPage = () => {
     // console.log(RawData);
     setMenu(RawData);
   };
+
+  const catagories =
+    menu?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (category) => {
+        if (
+          category.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+    );
+
+  // console.log(catagories);
+
+  // console.log(menu?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+
   useEffect(() => {
     getRestaurantPage();
   }, [resId]);
-//   console.log(menu?.data?.cards[2]?.card?.card?.info);
+  //   console.log(menu?.data?.cards[2]?.card?.card?.info);
 
-  if (menu === null){
-    return <div>Loading ...........</div>
+  if (menu === null) {
+    return <div>Loading ...........</div>;
   }
-  const { name, avgRatingString, costForTwo, totalRatingsString, cloudinaryImageId } =
-    menu?.data?.cards[2]?.card?.card?.info;
 
-  return <h1>{name}</h1>;
+  return (
+    <div>
+      <RestaurantInfo menu={menu} />
+      {catagories.map((category) => {
+        console.log(category);
+        return (
+          <MenuCategory
+            key={category.card.card.categoryId}
+            categoryInfo={category.card.card}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export default RestaurantPage;
