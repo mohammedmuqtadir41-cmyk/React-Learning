@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { topImages } from "../mockData/topImg";
+import { topImages } from "../Utils/topImg";
 import { TopShimmer } from "./TopSkeleton";
-import { imgBaseURL } from "../mockData/constants";
+import { imgBaseURL } from "../Utils/constants";
 
 const Top = ({ topData }) => {
   // console.log(topData, "from top.jsx");

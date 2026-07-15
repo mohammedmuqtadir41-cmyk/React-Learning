@@ -1,29 +1,27 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { LogoURL } from "../mockData/constants";
+import { LogoURL } from "../Utils/constants";
 
 const Header = ({ searchText, setSearchText }) => {
   return (
     <header className="header">
       <div id="logo">
         <Link to={"/"}>
-        <img src={LogoURL} />
+          <img src={LogoURL} />
         </Link>
       </div>
 
       <div id="search-bar">
-        
         <input
           type="text"
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
           placeholder="Search for restaurants, cuisines..."
-        /> 
+        />
       </div>
 
       <div className="nav-items">
         <ul>
-      
           <li>
             {" "}
             <Link to={"/offers"}>Offers</Link>

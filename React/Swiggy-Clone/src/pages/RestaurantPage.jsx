@@ -1,5 +1,5 @@
 import react, { useEffect, useState } from "react";
-import { MenuAPI } from "../mockData/constants";
+import { MenuAPI } from "../Utils/constants";
 import { useParams } from "react-router";
 import RestaurantInfo from "./RestaurantInfo";
 import MenuCategory from "./MenuCategory";
