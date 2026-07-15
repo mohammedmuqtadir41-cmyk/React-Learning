@@ -4,7 +4,7 @@ import { TopShimmer } from "./TopSkeleton";
 import { imgBaseURL } from "../mockData/constants";
 
 const Top = ({ topData }) => {
-  console.log(topData, "from top.jsx");
+  // console.log(topData, "from top.jsx");
 
   const [loading, setLoading] = useState(true);
 

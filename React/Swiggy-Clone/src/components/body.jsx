@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { Shimmer } from "./RestaurantSkeleton";
 import { useEffect, useState } from "react";
 import Top from "./Top";
+import { Link } from "react-router";
 
 const Body = ({ searchText = "" }) => {
   const [hotelList, setHotelList] = useState([]);
@@ -23,7 +24,6 @@ const Body = ({ searchText = "" }) => {
 
     // console.log("test", searchText);
   }, [searchText, hotelList]);
-
 
   const getData = async () => {
     const response = await fetch(swiggyURL);
@@ -62,16 +62,14 @@ const Body = ({ searchText = "" }) => {
 
   return (
     <div className="body">
-      <Top topData={topData} />
-      <div className="filter-container">
-        <button onClick={topRated}>⭐Top Rated Restaurants</button>
-        <button onClick={showAllRestaurants}>🍽️ All Restaurants</button>
-        <button onClick={sortByRating}>🔃Sort by Rating</button>
-      </div>
       <div className="res-container">
-        {filteredHotelList.map((resObj) => (
-          <RestaurantCard key={resObj.info.id} hotelData={resObj.info} />
-        ))}
+        {filteredHotelList.map((resObj) => {
+          return (
+            <Link to={`/restaurant/${resObj?.info?.id}`} key={resObj?.info?.id}>
+              <RestaurantCard resDetail={resObj?.info} />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

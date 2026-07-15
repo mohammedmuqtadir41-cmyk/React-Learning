@@ -6,24 +6,24 @@ const Header = ({ searchText, setSearchText }) => {
   return (
     <header className="header">
       <div id="logo">
+        <Link to={"/"}>
         <img src={LogoURL} />
+        </Link>
       </div>
 
       <div id="search-bar">
+        
         <input
           type="text"
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
           placeholder="Search for restaurants, cuisines..."
-        />
+        /> 
       </div>
 
       <div className="nav-items">
         <ul>
-          <li>
-            {" "}
-            <Link to={"/"}>Home</Link>
-          </li>
+      
           <li>
             {" "}
             <Link to={"/offers"}>Offers</Link>

@@ -1,6 +1,6 @@
 import { imgBaseURL } from "../mockData/constants";
 
-const RestaurantCard = ({ hotelData }) => {
+const RestaurantCard = ({ resDetail }) => {
 
   const {
     // resName,
@@ -15,7 +15,7 @@ const RestaurantCard = ({ hotelData }) => {
     // location,
     cloudinaryImageId,
     areaName,
-  } = hotelData;
+  } = resDetail;
 
   return (
     <div className="res-card">
