@@ -43,7 +43,7 @@ const RestaurantPage = () => {
   }
 
   return (
-    <div>
+    <div className="restaurant-page">
       <RestaurantInfo menu={menu} />
       {catagories.map((category) => {
         console.log(category);

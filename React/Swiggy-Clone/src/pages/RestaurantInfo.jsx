@@ -1,7 +1,8 @@
-import react from "react";
 import { imgBaseURL } from "../Utils/constants";
 
 const RestaurantInfo = ({ menu }) => {
+const info = menu?.data?.cards[2]?.card?.card?.info || {};
+
   const {
     name,
     avgRatingString,
@@ -9,17 +10,36 @@ const RestaurantInfo = ({ menu }) => {
     totalRatingsString,
     cloudinaryImageId,
     cuisines,
-  } = menu?.data?.cards[2]?.card?.card?.info;
-  // console.log(menu?.data?.cards[2]?.card?.card?.info);
+  } = info;
 
+const displayCost = costForTwo || (costForTwo ? `₹${costForTwo / 100} for two` : "");
   return (
-    <div className="rest-page-container">
-      <h1 className="menu-name">{name}</h1>;
-      <img className="menu-img" src={imgBaseURL + cloudinaryImageId} />
-      <h3>
-        {avgRatingString} ({totalRatingsString} )
-      </h3>
-      <h3>{cuisines?.join(" ,")}</h3>
+    <div className="restaurant-header">
+      <div className="restaurant-header-text">
+        <h1 className="restaurant-title">{name}</h1>
+        <p className="restaurant-cuisines">{cuisines?.join(", ")}</p>
+        
+        <div className="restaurant-meta">
+          <div className="meta-item rating">
+            <span>⭐ {avgRatingString}</span>
+            <small>{totalRatingsString}</small>
+          </div>
+          <div className="meta-item divider">|</div>
+          <div className="meta-item">
+            <span>{displayCost}</span>
+          </div>
+        </div>
+      </div>
+      
+      {cloudinaryImageId && ( 
+      <div className="restaurant-header-img-wrapper">
+        <img 
+          className="restaurant-hero-img" 
+          src={imgBaseURL + cloudinaryImageId} 
+          alt={name} 
+        />
+      </div>
+      )}
     </div>
   );
 };

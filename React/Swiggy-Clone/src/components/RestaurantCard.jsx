@@ -1,4 +1,4 @@
-import { imgBaseURL } from "../mockData/constants";
+import { imgBaseURL } from "../Utils/constants";
 
 const RestaurantCard = ({ resDetail }) => {
 

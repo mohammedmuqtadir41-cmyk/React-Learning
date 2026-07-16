@@ -473,3 +473,10 @@ body {
     margin: 0 auto;
   }
 }
+
+.res-link{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* a{ text-decoration: none;} */

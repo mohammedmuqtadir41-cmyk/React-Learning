@@ -1,4 +1,4 @@
-import { MenuURL, swiggyURL } from "../mockData/constants";
+import { MenuURL, swiggyURL } from "../Utils/constants";
 import RestaurantCard from "./RestaurantCard";
 import { Shimmer } from "./RestaurantSkeleton";
 import { useEffect, useState } from "react";
@@ -65,7 +65,7 @@ const Body = ({ searchText = "" }) => {
       <div className="res-container">
         {filteredHotelList.map((resObj) => {
           return (
-            <Link to={`/restaurant/${resObj?.info?.id}`} key={resObj?.info?.id}>
+            <Link className="res-link" to={`/restaurant/${resObj?.info?.id}`} key={resObj?.info?.id}>
               <RestaurantCard resDetail={resObj?.info} />
             </Link>
           );

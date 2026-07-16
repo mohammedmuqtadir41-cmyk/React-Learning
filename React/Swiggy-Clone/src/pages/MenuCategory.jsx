@@ -15,13 +15,13 @@ const MenuCategory = ({ categoryInfo }) => {
   return (
     <div className="category-accordian">
       <div className="category-header" onClick={toggleBody}>
-        <span>
+        <h3>
           {title} ({itemCards.length})
-        </span>
-        <span>⬇️</span>
+        </h3>
+        <span className={`chevron ${isOpen ? "open" : ""}`}>▼</span>
       </div>
 
-      {isOpen ? (
+      {isOpen && (
         <div className="category-body">
           <h2>{categoryInfo.title}</h2>
 
@@ -29,9 +29,9 @@ const MenuCategory = ({ categoryInfo }) => {
             <MenuItem details={item.card.info} key={item.card.info.id} />
           ))}
         </div>
-      ) : (
-        <div></div>
-      )}
+      ) }
+        <div className="category-divider"></div>
+      
     </div>
   );
 };
