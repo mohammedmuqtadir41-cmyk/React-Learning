@@ -20,11 +20,11 @@ const displayCost = costForTwo || (costForTwo ? `₹${costForTwo / 100} for two`
         <p className="restaurant-cuisines">{cuisines?.join(", ")}</p>
         
         <div className="restaurant-meta">
-          <div className="meta-item rating">
+          <div className="restaurant-item-rating">
             <span>⭐ {avgRatingString}</span>
-            <small>{totalRatingsString}</small>
+            <span>{totalRatingsString}</span>
           </div>
-          <div className="meta-item divider">|</div>
+          <div className="restaurant-item-divider">|</div>
           <div className="meta-item">
             <span>{displayCost}</span>
           </div>

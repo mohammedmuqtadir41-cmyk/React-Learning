@@ -6,15 +6,11 @@ import { imgBaseURL } from "../Utils/constants";
 const Top = ({ topData }) => {
   // console.log(topData, "from top.jsx");
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
+    setLoading(true);
+  });
 
   return (
     <div className="top-container">
