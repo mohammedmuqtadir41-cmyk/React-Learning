@@ -16,7 +16,7 @@ const useRestaurantMenu = (resId) => {
     try{
     const response = await fetch(MenuAPI + resId);
     const json = await response.json();
-    // console.log(RawData);
+    console.log(json);
     setMenu(json);
 
     const rawCards = json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];

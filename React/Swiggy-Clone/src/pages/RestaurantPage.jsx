@@ -1,5 +1,5 @@
 import RestaurantInfo from "./RestaurantInfo";
-import useRestaurantMenu from "../hooks/useRestaurantMenu";
+import useRestaurantMenu from "./useRestaurantMenu";
 import { useParams } from "react-router";
 import MenuCategory from "./MenuCategory";
 

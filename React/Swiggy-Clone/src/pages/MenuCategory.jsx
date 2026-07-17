@@ -6,6 +6,8 @@ const MenuCategory = ({ categoryInfo }) => {
   const { title, itemCards } = categoryInfo;
 
   const [isOpen, setIsOpen] = useState(false);
+  // const [showIndex, setShowIndex] = useState(null);
+
 
   function toggleBody() {
     setIsOpen(!isOpen);

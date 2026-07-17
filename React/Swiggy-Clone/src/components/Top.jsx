@@ -6,7 +6,7 @@ import { imgBaseURL } from "../Utils/constants";
 const Top = ({ topData }) => {
   // console.log(topData, "from top.jsx");
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
