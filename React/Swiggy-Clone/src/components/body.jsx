@@ -6,7 +6,6 @@ import Top from "./Top";
 import { Link } from "react-router";
 
 const Body = ({ searchText = "" }) => {
-  const [hotelList, setHotelList] = useState([]);
   const [topData, setTopData] = useState([]);
 
   const [filteredHotelList, setFilteredHotelList] = useState([]);

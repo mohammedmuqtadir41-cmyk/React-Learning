@@ -26,6 +26,7 @@ const Header = ({ searchText, setSearchText }) => {
 
       <div className="nav-items">
         <ul>
+          <li><button>Top Rated Restaurants</button></li>
           <li>{data.name}</li>
           <li>
             {" "}
