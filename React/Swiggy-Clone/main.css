@@ -543,3 +543,136 @@ body {
     transform: translateY(-15px); /* Bounces up by 15 pixels */
   }
 }
+/* ================= FOOTER ================= */
+
+.footer {
+  background: #1f1f1f;
+  color: #fff;
+  margin-top: 60px;
+  padding-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 0 40px 40px;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 260px;
+}
+
+.footer-brand h2 {
+  color: #ff6b00;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  color: #cfcfcf;
+  line-height: 1.8;
+}
+
+.footer-links {
+  min-width: 180px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  color: #ff6b00;
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 12px 0;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ff6b00;
+  padding-left: 6px;
+}
+
+.footer-contact {
+  min-width: 250px;
+}
+
+.footer-contact p {
+  margin: 12px 0;
+  color: #cfcfcf;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  text-align: center;
+  padding: 20px;
+  color: #bbb;
+  font-size: 15px;
+}
+
+/* Container framework that aligns the image stack */
+.res-card-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px; /* Matches modern Swiggy rounded card structures */
+}
+
+/* Ensure the image container has position relative so the overlay snaps perfectly */
+.res-img-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Standard card image ratio */
+}
+
+/* 
+ * The Authentic Swiggy Overlay:
+ * Places a dark-to-transparent scrim gradient across the lower 35% of the card image
+ */
+.swiggy-discount-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 12px 8px 12px; /* Generous top padding accommodates the smooth gradient blend */
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
+  z-index: 2;
+  box-sizing: border-box;
+  pointer-events: none; /* Allows click events to pass straight through cleanly */
+}
+
+/* Bold, high-contrast typography style matching Swiggy Pro text elements */
+.discount-text-main {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.15rem;
+  font-weight: 800; /* Ultra-bold layout weights */
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Gracefully truncates exceptionally long string combinations */
+}
+
+/* Fix structure positioning so image stays behind overlay elements */
+.res-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}

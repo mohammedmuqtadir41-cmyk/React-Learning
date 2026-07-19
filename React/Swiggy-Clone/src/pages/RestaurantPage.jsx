@@ -17,25 +17,22 @@ const RestaurantPage = () => {
     "Structuring spice levels...",
   ];
 
-  
-useEffect(() => {
-  if (menu !== null) return;
-  const interval = setInterval(() => {
-    setLoadingIndex((prev) => (prev + 1) % phrases.length);
-  }, 1000);
-  return () => clearInterval(interval);
-}, [menu]);
+  useEffect(() => {
+    if (menu !== null) return;
+    const interval = setInterval(() => {
+      setLoadingIndex((prev) => (prev + 1) % phrases.length);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [menu]);
 
-if (menu === null) {
-  return (
-    <div className="swiggy-loader-container">
-      <div className="swiggy-loader-emoji">🍔</div>
-      <div className="swiggy-loader-text">
-        {phrases[loadingIndex]}
+  if (menu === null) {
+    return (
+      <div className="swiggy-loader-container">
+        <div className="swiggy-loader-emoji">🍔</div>
+        <div className="swiggy-loader-text">{phrases[loadingIndex]}</div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
   return (
     <div className="restaurant-page">

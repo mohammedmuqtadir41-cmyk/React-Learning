@@ -1,7 +1,6 @@
 import { imgBaseURL } from "../Utils/constants";
 
 const RestaurantCard = ({ resDetail }) => {
-
   const {
     // resName,
     // cuisine,
@@ -19,7 +18,6 @@ const RestaurantCard = ({ resDetail }) => {
 
   return (
     <div className="res-card">
-
       <div className="res-img-container">
         <img
           className="res-logo"
@@ -29,6 +27,7 @@ const RestaurantCard = ({ resDetail }) => {
           //   imgId
           // }
           src={`${imgBaseURL}${cloudinaryImageId}`}
+          loading="lazy"
         />
       </div>
 
@@ -55,6 +54,25 @@ const RestaurantCard = ({ resDetail }) => {
       <h4>📍 {areaName}</h4>
     </div>
   );
+};
+
+export const withDiscountLabel = (WrappedComponent) => {
+  return function withDiscountLabel({resDetail, ...props}) {
+    const {header = "" , subHeader = ""} = resDetail?.aggregatedDiscountInfoV3 || {};
+    const discountText = `${header}${subHeader}`.trim();
+    return (
+      <div className="res-card-wrapper">
+        {/* 2. The discount overlay container container */}
+        {discountText && (
+          <div className="swiggy-discount-overlay">
+            <span className="discount-text-main">{discountText}</span>
+          </div>
+    )}
+    <WrappedComponent resDetail={resDetail} {...props} />
+      </div>
+    )
+
+  };
 };
 
 export default RestaurantCard;
