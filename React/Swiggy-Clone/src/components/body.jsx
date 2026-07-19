@@ -7,14 +7,12 @@ import { Link } from "react-router";
 import HotelListContext from "../Utils/HotelListContext";
 
 const Body = () => {
-
-
-  const { hotelList, setHotelList } = useContext(HotelListContext);
+  const { hotelList, setHotelList, allItems, setAllItems } =
+    useContext(HotelListContext);
 
   useEffect(() => {
     getData();
   }, []);
-
 
   const getData = async () => {
     const response = await fetch(swiggyURL);
@@ -24,14 +22,12 @@ const Body = () => {
         ?.restaurants || [];
 
     setHotelList(restaurants);
-    console.log(hotelList);
-    
+    setAllItems(restaurants);
   };
 
   if (!hotelList || hotelList.length === 0) {
     return <Shimmer />;
   }
-
 
   return (
     <div className="body">

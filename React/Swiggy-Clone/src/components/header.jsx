@@ -4,22 +4,23 @@ import { LogoURL } from "../Utils/constants";
 import HotelListContext from "../Utils/HotelListContext";
 
 const Header = () => {
-  const { hotelList, setHotelList } = useContext(HotelListContext);
+  const { hotelList, setHotelList, allItems } = useContext(HotelListContext);
 
   const [fitlerToggle, setFilterToggle] = useState(false);
 
   function setFilter() {
-    console.log("button was clicked");
+    // console.log("button was clicked");
 
     if (!fitlerToggle) {
       const filteredArray = hotelList.filter(
-        (resDetail) => resDetail.info.avgRating > 4.1,
+        (restaurant) => restaurant.info.avgRating > 4.1,
       );
 
       setHotelList(filteredArray);
       setFilterToggle(true);
     } else {
       setFilterToggle(false);
+      setHotelList(allItems);
     }
   }
 
