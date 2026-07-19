@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./src/utils/Approuter";
+import App from "./src/Utils/Approuter";
 import About from "./src/pages/About";
 import Help from "./src/pages/Help";
 import { createBrowserRouter, RouterProvider } from "react-router";

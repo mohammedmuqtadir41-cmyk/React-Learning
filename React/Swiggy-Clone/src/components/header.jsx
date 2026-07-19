@@ -1,12 +1,28 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router";
 import { LogoURL } from "../Utils/constants";
-import UserContext from "../Utils/UserContext";
+import HotelListContext from "../Utils/HotelListContext";
 
-const Header = ({ searchText, setSearchText }) => {
-  const data = useContext(UserContext);
-  console.log(data);
-  
+const Header = () => {
+  const { hotelList, setHotelList } = useContext(HotelListContext);
+
+  const [fitlerToggle, setFilterToggle] = useState(false);
+
+  function setFilter() {
+    console.log("button was clicked");
+
+    if (!fitlerToggle) {
+      const filteredArray = hotelList.filter(
+        (resDetail) => resDetail.info.avgRating > 4.1,
+      );
+
+      setHotelList(filteredArray);
+      setFilterToggle(true);
+    } else {
+      setFilterToggle(false);
+    }
+  }
+
   return (
     <header className="header">
       <div id="logo">
@@ -16,18 +32,15 @@ const Header = ({ searchText, setSearchText }) => {
       </div>
 
       <div id="search-bar">
-        <input
-          type="text"
-          value={searchText}
-          onChange={(event) => setSearchText(event.target.value)}
-          placeholder="Search for restaurants, cuisines..."
-        />
+        <input type="text" />
       </div>
 
       <div className="nav-items">
         <ul>
-          <li><button>Top Rated Restaurants</button></li>
-          <li>{data.name}</li>
+          <li>
+            <button onClick={setFilter}>{fitlerToggle ? "Show All Restaurants " : " Top Rated Restaurants"}</button>
+          </li>
+          {/* <li>{data.name}</li> */}
           <li>
             {" "}
             <Link to={"/offers"}>Offers</Link>

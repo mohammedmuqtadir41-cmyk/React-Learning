@@ -1,9 +1,7 @@
 import { Link } from "react-router";
 import { useContext } from "react";
-import UserContext from "../Utils/UserContext";
 
 const Footer = () => {
-  const data = useContext(UserContext);
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -39,7 +37,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 Food Stack. Built with ❤️ by  {data.name}.</p>
+        <p>© 2026 Food Stack. Built with ❤️ by  Mohammed Muqthadir Ahmed.</p>
       </div>
     </footer>
   );

@@ -1,28 +1,20 @@
 import { MenuURL, swiggyURL } from "../Utils/constants";
 import RestaurantCard from "./RestaurantCard";
 import { Shimmer } from "./RestaurantSkeleton";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Top from "./Top";
 import { Link } from "react-router";
+import HotelListContext from "../Utils/HotelListContext";
 
-const Body = ({ searchText = "" }) => {
-  const [topData, setTopData] = useState([]);
+const Body = () => {
 
-  const [filteredHotelList, setFilteredHotelList] = useState([]);
+
+  const { hotelList, setHotelList } = useContext(HotelListContext);
 
   useEffect(() => {
     getData();
   }, []);
 
-  useEffect(() => {
-    const filtered = hotelList.filter((resObj) =>
-      resObj.info.name.toLowerCase().includes(searchText.toLowerCase()),
-    );
-
-    setFilteredHotelList(filtered);
-
-    // console.log("test", searchText);
-  }, [searchText, hotelList]);
 
   const getData = async () => {
     const response = await fetch(swiggyURL);
@@ -32,39 +24,25 @@ const Body = ({ searchText = "" }) => {
         ?.restaurants || [];
 
     setHotelList(restaurants);
-    setFilteredHotelList(restaurants);
-
-    // const topData = data.data.cards[0].card.card.imageGridCards.info;
-    setTopData(data.data.cards[0].card.card.imageGridCards.info);
-    // console.log(setTopData);
+    console.log(hotelList);
+    
   };
 
-  if (hotelList.length === 0) {
+  if (!hotelList || hotelList.length === 0) {
     return <Shimmer />;
   }
 
-  const topRated = () => {
-    const filtered = hotelList.filter((resObj) => resObj.info.avgRating >= 4.3);
-    setFilteredHotelList(filtered);
-  };
-
-  const showAllRestaurants = () => {
-    setFilteredHotelList(hotelList);
-  };
-
-  const sortByRating = () => {
-    const filteredList = [...filteredHotelList].sort(
-      (a, b) => b.info.avgRating - a.info.avgRating,
-    );
-    setFilteredHotelList(filteredList);
-  };
 
   return (
     <div className="body">
       <div className="res-container">
-        {filteredHotelList.map((resObj) => {
+        {hotelList.map((resObj) => {
           return (
-            <Link className="res-link" to={`/restaurant/${resObj?.info?.id}`} key={resObj?.info?.id}>
+            <Link
+              className="res-link"
+              to={`/restaurant/${resObj?.info?.id}`}
+              key={resObj?.info?.id}
+            >
               <RestaurantCard resDetail={resObj?.info} />
             </Link>
           );
